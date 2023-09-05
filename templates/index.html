@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic playlist</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='visual/playlist_icon.ico') }}?v=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css') }}">
+</head>
+
+<body>
+    <div class="main_container">
+
+        <div class="title_container">
+            <h2>DYNAMICALLY GENERATED MUSIC PLAYLIST</h2>
+            <div class="subtitle_container">
+                <p class="subtitle" id="help">CONCEPT EXERCISE</p>
+                <p class='help_modal' id="help_modal_1">H</p>
+            </div>
+        </div>
+
+        <div class="type_selection_container">
+            <div class="type_selection_title">
+                <p>1. Select song type to generate initial playlist&nbsp;&nbsp;</p>
+                <p class='help_modal' id="help_modal_2">H</p>
+            </div>
+            <div class="type_selection">
+                <p class="A" id="A">A</p>
+                <p class="B" id="B">B</p>
+                <p class="C" id="C">C</p>
+                <p class="D" id="D">D</p>
+                <p class="E" id="E">E</p>
+                <p class="F" id="F">F</p>
+                <p class="G" id="G">G</p>
+                <p class="H" id="H">H</p>
+            </div>
+        </div>
+
+        <div class="player_container">
+            <div class="player_title">
+                <p>2. User actions&nbsp;&nbsp;&nbsp;</p>
+                <p class='help_modal' id="help_modal_3">H</p>
+            </div>
+            <div class="player_subtitle">[under construction]</div>
+            <div class="player">
+                <div class="player_slider">
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                </div>
+                <div class="player_buttons">
+                    <p>&#9664;</p>
+                    <p>&#9208;</p>
+                    <p>&#9654;</p>
+                    <p class="excluded_button"></p>
+                    <p>&#128077;</p>
+                    <p>&#128078;</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="playlist_container">
+            <div class="playlist_title">
+                <p>3. Click different song type and scroll down&nbsp;&nbsp;&nbsp;</p>
+                <p class='help_modal' id="help_modal_4">H</p>
+            </div>
+
+            <div class="playlist">
+                <table class="playlist_table" id="playlist_table">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="scroll_container">
+                <p id="up_control">&#9650;</p>
+                <p id="down_control">&#9660;</p>
+            </div>
+        </div>
+        <div class="stat_container">
+            <div class="stat_title">
+                <p>Playlist statistics&nbsp;&nbsp;&nbsp;</p>
+                <p class='help_modal' id="help_modal_5">H</p>
+            </div>
+            <div class="stats_row0">
+                <p class="stat">Number of songs in the playlist : <span id="stat_count">0</span></p>
+            </div>
+            <div class="stats_row1">
+                <p class="stat">A: <span id="stat_A">0%</span></p>
+                <p class="stat">B: <span id="stat_B">0%</span></p>
+                <p class="stat">C: <span id="stat_C">0%</span></p>
+                <p class="stat">D: <span id="stat_D">0%</span></p>
+            </div>
+            <div class="stats_row2">
+                <p class="stat">F: <span id="stat_E">0%</span></p>
+                <p class="stat">F: <span id="stat_F">0%</span></p>
+                <p class="stat">G: <span id="stat_G">0%</span></p>
+                <p class="stat">H: <span id="stat_H">0%</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal" id="h1_modal">
+        <div class="modal_content">
+            <span class="modal_close" id="h1_modal_close">&times;</span>
+            <p>DYNAMICALLY GENERATED PLAYLIST<br> <span style="font-size: 10px;"><i>CONCEPT</i></span> <br><br> The core
+                concept behind this application revolves around
+                a dynamic playlist generation. Unlike
+                conventional playlists, where songs are pre-defined, my approach adapts to user preferences during
+                playback. The songs following the currently visible ones in the playlist are swapped based
+                on the user's listening habits. This algorithm ensures that the playlist aligns closely with the user's
+                preferences and enhances their overall music experience.
+                <br><br><br>
+                USAGE
+                <br>
+                To begin, select the type of song by clicking on the corresponding categories: A, B, C and so on
+                [section 1]. This
+                initiates the playlist generation process. Once you've made your initial selection, click on any
+                category within the playlist [section 3] and simply scroll downwards to observe the effects.
+                <br><br><br>
+                NOTE
+                <br>
+                The choice of categories and shuffling of songs in the playlist is accentuated with the intention of
+                showcasing the functionality of the dynamic playlist concept
+            <p>
+        </div>
+    </div>
+
+    <div class="modal" id="h2_modal">
+        <div class="modal_content">
+            <span class="modal_close" id="h2_modal_close">&times;</span>
+            <p>SONG TYPE SELECTION <br><br>When selecting songs based on specific genres, playlist generator offers
+                a straightforward process. Similar to the initial song choice, the generator compiles songs from the
+                chosen category. What sets it apart is its ability to enrich your playlist by incorporating songs from
+                related genres. These related tracks, sharing thematic similarities, seamlessly integrate into the
+                playlist.
+            <p>
+        </div>
+    </div>
+
+    <div class="modal" id="h3_modal">
+        <div class="modal_content">
+            <span class="modal_close" id="h3_modal_close">&times;</span>
+            <p>USER SONG LISTENING BEHAVIOUR<br><br> [in development] Playlist selection is modified based on user
+                actions such as song skipping, genre shifts, adding song to a playlist, time of day, volume adjustments
+                for specific songs, and other considerations.
+                <br>
+
+        </div>
+    </div>
+
+    <div class="modal" id="h4_modal">
+        <div class="modal_content">
+            <span class="modal_close" id="h4_modal_close">&times;</span>
+            <p>PLAYLIST GENERATION<br><br>Check the effect of song category changes as you scroll through the playlist.
+                This algorithm is based on mock correlations between music types to demonstrate the functionality of
+                generating a dynamic playlist.
+            <p>
+        </div>
+    </div>
+
+    <div class="modal" id="h5_modal">
+        <div class="modal_content">
+            <span class="modal_close" id="h5_modal_close">&times;</span>
+            <p>STATISTICS<br><br>The statistics section displays the outcomes of playlist generation algorithm usage. It
+                showcases the music type statistics generated by the algorithm.
+            <p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='variables.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='script/main.js') }}"></script>
+</body>
+
+</html>
