@@ -49,5 +49,3 @@ The choice of categories and shuffling of songs in the playlist is accentuated w
 
 Clone this repository to your local machine.
 
-```shell
-git clone https://github.com/yourusername/dynamic-playlist-generator.git
