@@ -1,4 +1,5 @@
 # Dynamic Playlist Generator
+[exercise]
 
 ## Overview
 
